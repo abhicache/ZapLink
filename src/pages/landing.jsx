@@ -86,16 +86,16 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-900 via-purple-800 to-indigo-900 text-white overflow-hidden">
+    <div className="w-full min-h-screen bg-gradient-to-br from-violet-900 via-purple-800 to-indigo-900 text-white">
       {/* Hero Section */}
-      <div ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden">
+      <div ref={heroRef} className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden">
         {/* Floating elements animation */}
         <div className="absolute top-20 left-10 w-12 h-12 rounded-full bg-purple-500/30 animate-float1"></div>
         <div className="absolute bottom-20 right-10 w-16 h-16 rounded-full bg-indigo-500/20 animate-float2"></div>
         <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-violet-500/20 animate-float3"></div>
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6 animate-in">
+        <div className="relative z-10 max-w-5xl w-full mx-auto text-center space-y-6 animate-in">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
             <Sparkles size={16} className="mr-2 text-yellow-300" />
             <span className="text-sm font-medium">Revolutionizing Link Management</span>
@@ -176,8 +176,8 @@ const Landing = () => {
       </div>
 
       {/* Features Section */}
-      <div id="features" className="py-20 px-4 md:px-8 relative">
-        <div className="max-w-7xl mx-auto">
+      <div id="features" className="w-full py-20 px-4 md:px-8 relative">
+        <div className="max-w-7xl w-full mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">Powerful Features</h2>
             <p className="text-xl text-purple-100/80 max-w-3xl mx-auto">All the tools you need to manage, track, and optimize your links in one powerful platform.</p>
@@ -220,7 +220,7 @@ const Landing = () => {
         </div>
 
         {/* Stats section */}
-        <div ref={statsRef} className="animate-on-scroll mt-24 max-w-5xl mx-auto">
+        <div ref={statsRef} className="animate-on-scroll mt-24 max-w-5xl w-full mx-auto">
           <div className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 md:p-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
@@ -240,8 +240,8 @@ const Landing = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 px-4 md:px-8 relative">
-        <div className="animate-on-scroll max-w-4xl mx-auto text-center">
+      <div className="w-full py-20 px-4 md:px-8 relative">
+        <div className="animate-on-scroll max-w-4xl w-full mx-auto text-center">
           <div className="relative bg-gradient-to-br from-indigo-900/80 to-violet-900/80 rounded-2xl p-8 md:p-12 border border-white/10 shadow-xl overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
@@ -263,8 +263,8 @@ const Landing = () => {
       </div>
 
       {/* Footer */}
-      <footer className="py-10 px-4 md:px-8 border-t border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <footer className="w-full py-10 px-4 md:px-8 border-t border-white/10">
+        <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
             <Zap size={24} className="text-yellow-400 mr-2" />
             <span className="text-xl font-bold">ZapLink</span>
@@ -315,6 +315,26 @@ const Landing = () => {
         }
         .perspective-1000 {
           perspective: 1000px;
+        }
+        
+        /* Fix for container width issues */
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          overflow-x: hidden;
+        }
+
+        /* Make background cover full width */
+        body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          z-index: -1;
         }
       `}</style>
     </div>

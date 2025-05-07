@@ -1,16 +1,23 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 
 const AppLayout = () => {
-  return <div>
-    <main className="min-h-screen container">
-        {/* header nd body */}
+  const location = useLocation();
+  // Check if we're on the landing page
+  const isLandingPage = location.pathname === '/';
+  
+  return (
+    <div className="w-full overflow-x-hidden">
+      <main className={`min-h-screen ${isLandingPage ? '' : 'container'}`}>
         <Outlet/>
-    </main>
-    
-    <div>
-        ZapLink - 2025
+      </main>
+      
+      {!isLandingPage && (
+        <div className="container">
+          ZapLink - 2025
+        </div>
+      )}
     </div>
-  </div>
+  )
 }
 
 export default AppLayout
