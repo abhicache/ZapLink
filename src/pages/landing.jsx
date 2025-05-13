@@ -260,9 +260,7 @@ const Landing = () => {
             <p className="mt-4 text-sm text-purple-100/70">No credit card required</p>
           </div>
         </div>
-      </div>
-
-      {/* Footer */}
+      </div>      {/* Footer */}
       <footer className="w-full py-10 px-4 md:px-8 border-t border-white/10">
         <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
@@ -276,6 +274,9 @@ const Landing = () => {
             <a href="#" className="hover:text-white transition-colors">Contact</a>
             <div>© 2025 ZapLink. All rights reserved.</div>
           </div>
+        </div>
+        <div className="text-center mt-6 text-sm text-purple-100/60">
+          Brewed with <span className="text-red-400">❤️</span> by <a href="https://github.com/abhicache" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white transition-colors">@abhicache</a>
         </div>
       </footer>
 
